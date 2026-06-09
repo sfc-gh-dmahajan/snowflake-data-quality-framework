@@ -793,14 +793,14 @@ BEGIN
         COALESCE(SUM(ESTIMATED_COST_USD), 0),
         COUNT(DISTINCT OBJECT_NAME)
     INTO :v_total_cost, :v_object_count
-    FROM DQ_COST_DAILY_LOG
-    WHERE LOG_DATE = CURRENT_DATE();
+    FROM DQ_COST_DAILY_LOG;
+    --WHERE LOG_DATE = CURRENT_DATE();
 
     -- Get active anomalies
     SELECT COUNT(*)
     INTO :v_anomaly_count
-    FROM DQ_COST_ANOMALY_LOG
-    WHERE IS_RESOLVED = FALSE;
+    FROM DQ_COST_ANOMALY_LOG;
+    --WHERE IS_RESOLVED = FALSE;
 
     -- Build summary message
     v_message := 'Daily cost summary: Total $' || TO_VARCHAR(:v_total_cost, '999,999.999999')
