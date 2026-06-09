@@ -1,4 +1,4 @@
-#GSCDNA Data Quality Observability Framework
+##GSCDNA Data Quality Observability Framework
 
 End-to-end Snowflake-native framework for monitoring the cost, health, and operational efficiency of Data Metric Function (DMF) based data quality checks across AT&T GSCDNA data assets.
 
